@@ -1,0 +1,50 @@
+{
+  "name": "Equipment",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Equipment type name"
+    },
+    "barcode": {
+      "type": "string",
+      "description": "Barcode/serial number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "borrowed"
+      ],
+      "default": "available",
+      "description": "Current availability status"
+    },
+    "borrowed_by": {
+      "type": "string",
+      "description": "Name of person who has the item"
+    },
+    "borrowed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the item was borrowed"
+    },
+    "category": {
+      "type": "string",
+      "description": "Equipment category"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 1,
+      "description": "Total quantity"
+    },
+    "available_quantity": {
+      "type": "number",
+      "default": 1,
+      "description": "Available quantity in stock"
+    }
+  },
+  "required": [
+    "name",
+    "barcode"
+  ]
+}
